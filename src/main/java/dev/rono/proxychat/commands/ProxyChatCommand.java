@@ -36,11 +36,12 @@ public class ProxyChatCommand extends Command implements TabExecutor {
         }
 
         if (args[0].equalsIgnoreCase("version")) {
-            TextComponent message = new TextComponent(ChatColor.DARK_BLUE + "Made by Rono @ ");
-            TextComponent link = new TextComponent("https://www.spigotmc.org/resources/73583/");
+            String pluginVersion = ProxyChat.getInstance().getDescription().getVersion();
+            TextComponent message = new TextComponent(ChatColor.DARK_BLUE + "ProxyChat v" + pluginVersion + " by Rono");
+            TextComponent link = new TextComponent(ChatColor.DARK_BLUE + "https://www.spigotmc.org/resources/73583/");
             link.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.spigotmc.org/resources/73583/"));
-            message.addExtra(link);
             sender.sendMessage(message);
+            sender.sendMessage(link);
         }
     }
 

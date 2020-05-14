@@ -90,4 +90,8 @@ public final class ProxyChat extends Plugin {
         String message = config.getString(value);
         return new TextComponent(TextComponent.fromLegacyText(ChatColor.translateAlternateColorCodes('&', prefix + message)));
     }
+
+    public static ProxyChat getInstance() {
+        return instance;
+    }
 }
